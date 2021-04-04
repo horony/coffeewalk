@@ -1,0 +1,525 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: white; 
+}
+
+hr {
+  border:none;
+  border-top:1px dotted lightgray;
+  height:1px;
+  width:100%%;
+}
+
+#app-wrapper{
+  padding: 20px;
+}
+
+#content-wrapper{
+  background: white;
+  min-width: 220px;
+  margin: auto;
+  clear: both;
+  max-width: 600px;
+  padding: 10px;
+  border-radius: 25px;
+  background: linear-gradient(-30deg, rgba(226, 226, 226, 0.22), rgba(255,255,255,0.25));
+  box-shadow: 12px 12px 16px 8px rgba(0, 0, 0, 0.25), 2px 2px 12px 2px rgba(255, 255, 255, 0.3);
+}
+
+#content-header{
+  padding: 15px;
+  text-align: center;
+}
+
+#header-header{
+  font-weight: bold;
+  font-size: 48px;
+  font-family: 'Annie Use Your Telescope';
+}
+
+#header-header a{
+  text-decoration: none;
+  color: black;
+}
+
+#header-slogan{
+  font-size: 12px;
+  color: #944700;
+}
+
+#content-app-desc{
+  font-size: 12px;
+  padding: 5px;
+  color: darkgray;
+}
+
+#content-userinput{
+  margin-left: 2.5px;
+  margin-right: 2.5px;
+}
+
+#content-search-button{
+  text-align: center;
+  display: inline-flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.search-button-item{
+  margin: 3px;
+}
+
+
+#searchlog{
+  text-align: left;
+  font-size: 9px;
+  color: lightgray;
+  font-family: "Courier New", monospace;
+}
+
+#content-footer{
+  text-align: center;
+  color: gray;
+  font-size: 12px;
+}
+
+#content-footer a{
+  text-decoration: none !important;
+  color: gray;
+}
+
+/* Collapsible */
+.collapsible-button {
+  background-color: transparent;
+  color: black;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.collapsible-active, .collapsible-button:hover {
+  color: black;
+}
+
+.collapsible-button:after {
+  background-color: transparent;
+  content: '\002B';
+  color: black;
+  font-weight: bold;
+  float: right;
+
+}
+
+.collapsible-active:after {
+  content: "\2212";
+  color: black;
+}
+
+.collapsible-content {
+  padding: 0 5px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: transparent;
+  margin-left: 2.5px;
+  margin-right: 2.5px;
+}
+
+/* Buttons */
+
+
+.search-button {
+  font-family: 'Annie Use Your Telescope' !important;
+  padding-top: 0.5em;
+  padding-right: 1.5em;
+  padding-bottom: 0.75em;
+  padding-left: 1.5em;
+  font-size: 28px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #aa5202;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1), inset 0 -0.25em 0 rgba(0, 0, 0, 0.25), 0 0.25em 0.25em rgba(0, 0, 0, 0.05);
+}
+
+.search-button:hover {background-color: #aa5202}
+
+.search-button:active {
+box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2), inset 0 2px 0 rgba(255, 255, 255, 0.1), inset 0 0.25em 0.5em rgba(0, 0, 0, 0.05);
+margin-top: .25em;
+padding-bottom: .5em;
+}
+
+#filter-content-distance, #filter-content-rating, #filter-content-open{
+  text-align: center;
+  padding: 5px;
+}
+
+.filter-headline{
+  color: black;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+/* Slider */
+#filter-content-distance{
+  width: 100%;
+  text-align:center;
+  display: inline-flex;
+  flex-direction: column;
+}
+
+#slider_output_container{
+  display: inline-flex;
+  justify-content: center;
+}
+
+#slider_output {
+  position: relative;
+  display: block;
+  text-align: center;
+  font-size: 64px;
+  color: black;
+  font-weight: 400;
+}
+
+#slider_output_einheit {
+  position: relative;
+  display: block;
+  text-align: center;
+  font-size: 24px !important;
+  margin-top: 35px !important;
+  color: black;
+  font-weight: 400;
+}
+
+
+#myRange {
+  height: 20px;
+  outline: none;*/
+  border-radius: 15px;
+  overflow: hidden;
+  margin-left: 12.5%;
+  margin-right: 12.5%;
+  cursor: pointer;
+}
+
+#myRange::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 4px solid #333;
+}
+
+/* Tooltips */
+
+.filter-tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: help;
+}
+
+.winner-tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: help;  
+}
+
+.filter-tooltip-text {
+  padding: 2px;
+  white-space: normal;
+}
+
+.winner-tooltip-text {
+  padding: 2px;
+  white-space: normal;
+}
+
+.filter-tooltip .filter-tooltip-text {
+  visibility: hidden;
+  width: 100%;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  right: 0%;
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  font-size: 10px;
+}
+
+
+.winner-tooltip .winner-tooltip-text {
+  visibility: hidden;
+  width: 100px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  right: 0%;
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  font-size: 10px;
+}
+
+
+.filter-tooltip:hover .filter-tooltip-text {
+  visibility: visible;
+}
+
+
+.winner-tooltip:hover .winner-tooltip-text {
+  visibility: visible;
+}
+
+
+.filter-tooltip .filter-tooltip-text::after {
+  content: " ";
+  position: absolute;
+  bottom: 100%;  /* At the top of the tooltip */
+  left: 50%;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #555 transparent;
+}
+
+
+.winner-tooltip .winner-tooltip-text::after {
+  content: " ";
+  position: absolute;
+  bottom: 100%;  
+  left: 75%;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #555 transparent;
+}
+
+#winner_cafe{
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+#winner_cafe_rating{
+  display: flex;
+  flex-direction: row;
+  padding: 1px;
+  justify-content: center;
+}
+
+#winner_cafe_google_rating{
+  display: flex;
+  flex-direction: column;
+  padding: 2px;
+  white-space: nowrap;
+}
+
+#winner_cafe_rating_numbers{
+  color: darkgray;
+  font-size: 10px;
+  text-align: center;
+}
+
+#winner_cafe_cw_approval{
+  padding: 3px;
+  font-size: 7px;
+}
+
+#winner_cafe_coords_button, #winner_cafe_google_button{
+  font-size: 32px;
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  margin: 5px;
+  cursor: pointer;
+}
+
+#winner_cafe_google_button{
+   background-color: #679DF6;
+   border-style: solid;
+   border-color: #4285F4;
+   border-width: 2px;
+}
+
+#winner_cafe_google_button:hover{
+   background: #4285F4;
+}
+
+.winner_cafe_subheader{
+  font-size: 12px;
+  padding: 2px;
+  color: darkgray;
+  display: flex;
+  justify-content: center;
+}
+
+#winner_cafe_navigation, #winner_cafe_details{
+  display: flex;
+  justify-content: center;
+  padding: 3px;
+  margin: 3px;
+
+}
+
+#winner_cafe_details{
+  flex-wrap: wrap;
+  text-align: center;
+  flex-direction: column;
+}
+
+
+#winner_cafe_descr{
+  display: inline-flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+#winner_cafe_display_name{
+  font-size: 32px;
+  font-weight: bold;
+  padding: 3px;
+  padding-bottom: 0px;
+  margin-bottom: -3px;
+}
+
+#winner_cafe_vicinity{
+  font-size: 10px;
+  color: darkgray;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 3px;
+  padding-right: 3px;
+
+}
+
+#filter-misc{
+  flex-direction: row;
+  display: inline-flex;
+  text-align: center;
+  width: 100%;
+  justify-content: space-evenly;
+  flex-wrap: wrap-reverse;
+}
+
+.filter-misc-item{
+  flex-direction: column;
+  display: inline-flex;
+  text-align: center;
+  margin: 2px;
+}
+
+
+/* The switch - the box around the slider */
+#cafe-open-switch, #secret-mode-switch, #cw-approved-switch{
+  font-size: 24px;
+  padding: 10px;
+  border-radius: 50%;
+  line-height: 30px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  margin: 5px;
+  cursor: pointer;
+  vertical-align: middle !important;
+  margin: auto;
+
+}
+
+.cw-filter-on{
+  background: green !important;
+  color: white !important;
+}
+
+.cw-filter-off{
+  background: lightgray !important;
+  color: gray !important;
+}
+
+.fa-star{
+  color: black;
+}
+
+.star-checked{
+  color: gold !important;
+}
+
+.stars input {
+    position: absolute;
+    left: -999999px;
+}
+
+.stars{
+  white-space: nowrap;
+}
+
+.stars a {
+    display: inline-block;
+    padding-right:4px;
+    text-decoration: none;
+    margin:0;
+    white-space: nowrap;
+}
+
+.stars a:after {
+    position: relative;
+    font-size: 18px;
+    font-family: 'Font Awesome 5 Free';
+    display: block;
+    content: "\f005";
+    color: black;
+    font-weight: 800;
+}
+
+
+.stars span {
+  font-size: 0; /* trick to remove inline-element's margin */
+}
+
+.stars a:hover ~ a:after{
+  color: black !important;
+}
+
+.stars span.active a.active ~ a:after{
+  color: black;
+}
+
+span:hover a:after{
+  color:gold !important;
+}
+
+span.active a:after,
+ .stars a.active:after{
+  color:gold;
+}
+
+#datenschutz-text{
+  font-size: 12px;
+  padding: 5px;
+}
+
+#wrapper-opt-in{
+  font-size: 10px;
+  color: #767676;
+}
+
+
+/* Code-Text in About */
+.code-text{
+  background: lightgray;
+  font-family: "Courier New", monospace;
+  font-size: 11px;
+}
