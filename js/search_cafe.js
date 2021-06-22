@@ -1,4 +1,5 @@
 // Funktion zur Berechnung der Luftlinie zwischen zwei Koordinaten
+/*
 function calc_crow_distance(lat1, lon1, lat2, lon2, unit) {
 	if ((lat1 == lat2) && (lon1 == lon2)) {
 		return 0;
@@ -19,7 +20,29 @@ function calc_crow_distance(lat1, lon1, lat2, lon2, unit) {
 		if (unit=="N") { dist = dist * 0.8684 }
 		return dist;
 	}
-}	
+}
+*/	
+
+function calc_crow_distance(lat1, lon1, lat2, lon2, unit) 
+    {
+      var R = 6371; // km
+      var dLat = toRad(lat2-lat1);
+      var dLon = toRad(lon2-lon1);
+      var lat1 = toRad(lat1);
+      var lat2 = toRad(lat2);
+
+      var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+        Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(lat1) * Math.cos(lat2); 
+      var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+      var d = R * c;
+      return d;
+    }
+
+    // Converts numeric degrees to radians
+function toRad(Value) 
+    {
+        return Value * Math.PI / 180;
+    }
 
 var map;
 var service;
@@ -83,11 +106,11 @@ function getCafes(position) {
   	var user_location = new google.maps.LatLng(user_latitude,user_longitude);
 	map = new google.maps.Map(document.getElementById('map'), {
 	    center: user_location,
-	    zoom: 14
+	    zoom: 15
 	});
 
 	// Hole Filter-Wert: Umrechnung Minuten zu Meter (5km/h Gehgeschwindigkeit)
-	search_radius = Math.round(slider_user_input*83.333);
+	search_radius = Math.round(slider_user_input*85.333);
   	document.getElementById("searchlog-radius").innerHTML = "Google Maps Radius: " + slider_user_input + " Minuten * 5km/h = " + search_radius + " Meter";
 
   	// Hole Filter-Wert: Cafe geöffnet?
@@ -170,12 +193,13 @@ function draw_random_cafe(){
 
 	//Merge Array of Arrays falls durch Pagination erzeugt
 	const merged_array = cafes_found_array.flat(1); 
-	//console.log(merged_array)
+	console.log('Found cafes array', merged_array)
 				  	
   	// Zufällige Sortierung in einem Array von Zahlen (Lostrommel)
 	merged_array_length = merged_array.length
 	var random_numbers = Array.from(Array(merged_array_length).keys())
-	random_numbers.sort(function() { return 0.5 - Math.random();})
+	random_numbers = random_numbers.sort(function() { return 0.5 - Math.random();})
+	console.log('Random array', random_numbers)
 
 	var winner_number
 	var winner_number_found = false
@@ -185,23 +209,27 @@ function draw_random_cafe(){
 
 		// Es wird eine Nummer aus der Lostrommel gezogen
 		var drawn_number = random_numbers.pop();
-		//console.log('Drawn Number: ' + drawn_number)
+		console.log('Drawn Number: ' + drawn_number)
 
 		if (typeof merged_array[drawn_number] === 'undefined'){
-			//console.log('Drawn number did not match.')
+			console.log('Drawn number did not match.')
 		} else {
 			// Prüfe Rating
 			rating_cafe = Math.round(merged_array[drawn_number].rating)
 
 			if (rating_cafe >= user_input_star_rating) {
+				console.log('Rating matches')
 
 				// Prüfe Luftlinie
 	  			var cafe_location = merged_array[drawn_number].geometry.location;
 				var cafe_latitude = cafe_location.lat();
 				var cafe_longitude = cafe_location.lng();
-				var crow_distance = calc_crow_distance(cafe_latitude, cafe_longitude, user_latitude,user_longitude,"K");
+				var crow_distance = calc_crow_distance(cafe_latitude, cafe_longitude, user_latitude, user_longitude,"K");
+				console.log('crow_distance', crow_distance)
+				console.log('search_radius', search_radius)
 
 				if (crow_distance*1000 <= search_radius) {
+					console.log('Distance matches')
 					//console.log('Luftlinie:' + crow_distance*1000)
 					//console.log('Search Radius:' + search_radius)
 
@@ -209,7 +237,7 @@ function draw_random_cafe(){
 					user_input_cw_approved = document.getElementById("cw-approved-switch").className
 
 					var cw_approved_cafes_list = [
-					  "ChIJ44JVHKlet0cRgJd8vuz3FCs" // Cafe Ole NK
+					  "ChIJ44JVHKlet0cRgJd8vuz3FCs" // Cafe Ole Neuenkirchen-Vörden
 					  , "ChIJHbiNcWkJvUcR_fXme3B2Gxk" // Fridas Cafe FFM
 					  , "ChIJ5-5FWnAJvUcR-LtbHSfCZ-k" // Cafe Heimelig FFM
 					  , "ChIJv12D5rYPvUcRxcM7FVTCLGI" // Under Pressure FFM
@@ -221,6 +249,8 @@ function draw_random_cafe(){
 					  , "ChIJa7JWc-ALvUcRwoYmRFAkhY4" // Croquant FFM
 					  , "ChIJjUf19wwJvUcRsklQ9GGgG4c" // Wilson & Oskar FFM
 					  , "ChIJwfyKRqEOvUcRjL9eMUUBDB0" // Sugarmama FFM
+					  , "ChIJyfJ5Ie8LvUcR5fPn5knLRNY" // MOMI FFM
+					  , "ChIJJU9PaEMJvUcRfDJnV9A5PV0" // Brühmarkt FFM
 					];
 
 					var akt_place_id = merged_array[drawn_number].place_id;
@@ -244,13 +274,13 @@ function draw_random_cafe(){
 						winner_number = drawn_number
 						winner_number_found = true
 					} else {
-						//console.log('CW Approval did not match')
+						console.log('CW Approval did not match')
 											}
 				} else {
-					//console.log('Crow Distance did not match')
+					console.log('Crow Distance did not match')
 										}
 			} else {
-				//console.log('Rating did not match.')
+				console.log('Rating did not match.')
 			}
 		}
 	}
