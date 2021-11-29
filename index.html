@@ -8,7 +8,7 @@
 	<meta name="robots" content="noindex,nofollow">
     	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, minimum-scale=0.1, user-scalable=no, minimal-ui">
 
-    <!-- Lade Stylesheets -->
+    	<!-- Lade Stylesheets -->
 	<link rel="stylesheet" type="text/css" media="screen, projection" href="css/coffee_style.css"></link>
 	<link href='https://fonts.googleapis.com/css?family=Annie Use Your Telescope' rel='stylesheet'></link>
 
@@ -16,6 +16,11 @@
 	<script src="https://kit.fontawesome.com/f55cefa7fc.js" crossorigin="anonymous"></script>
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqcyjHy68OLKG-qEc3Ex9qdd4k0MfYxQE&libraries=places"></script>	
+
+	<!-- eigene JavaScripte -->
+	<script type="text/javascript" src="js/expand_collapsible.js"></script> 
+	<script type="text/javascript" src="js/user_input.js"></script>
+	<script type="text/javascript" src="js/search_cafe.js"></script> 
 
 </head>
 
@@ -47,11 +52,6 @@
 				<!-- Ausklappendes Menü für Userfilter etc. -->
 				<button class="collapsible-button">Sucheinstellungen</button>
 				<div class="collapsible-content">
-
-					<script type="text/javascript" src="js/expand_collapsible.js"></script> 
-					
-					<!-- Funktionalitäten der Filter -->
-					<script type="text/javascript" src="js/user_input.js"></script>
 					
 					<!-- User-Input: Maximale Distanz bzw. Laufweite -->
 					<div id="filter-content-distance">
@@ -237,9 +237,6 @@
 			<!-- Benötigt für Places API-->
 			<div id="map"></div>
 			
-			<!-- Javascript Suchfunktion -->
-			<script type="text/javascript" src="js/search_cafe.js"></script> 
-
 		    <!-- FOOTER -->
    		    <hr>
 			<div id='content-footer'>
