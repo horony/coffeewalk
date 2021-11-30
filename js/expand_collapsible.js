@@ -1,4 +1,4 @@
-/* Javascript zum ausklappen des Bereichs mit den ansonsten versteckten Userfiltern */
+// Javascript zum ausklappen des Bereichs mit den ansonsten versteckten Userfiltern
 
 var coll = document.getElementsByClassName("collapsible-button");
 var i;
