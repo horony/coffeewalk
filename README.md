@@ -4,7 +4,7 @@ During the COVID pandemic one of the few possible activities left was to take wa
 
 ## Preview
 
-Opening the web-app it should look something like this:
+Opening the web-app it should look something like the screenshots in the table below.
 
 Search window            |  Results window
 :-------------------------:|:-------------------------:
