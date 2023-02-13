@@ -2,10 +2,12 @@
 
 During the COVID pandemic one of the few possible activities left was to take walks and occasionally grab a take-away coffee. To explore some new neighborhoods and coffee places I came up with the idea Coffee Walk. Based on the users location and some parameters this small web-app suggests the user a nice cafe in - hopefully - walking distance.
 
-## How it looks
+## Preview
 
-<img src="./img/coffeewalk-home-screenshot.png" alt="drawing" width="400"/>
-
+<p float="left">
+  <img src="./img/coffeewalk-home-screenshot.png" alt="drawing" width="400"/>
+  <img src="./img/coffeewalk-results-screenshot.png" alt="drawing" width="400"/>
+</p>
 
 ## How it works
 
