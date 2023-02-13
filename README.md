@@ -4,12 +4,9 @@ During the COVID pandemic one of the few possible activities left was to take wa
 
 ## Preview
 
-<p style="float='left'; vertical-align='top'">
-  <img src="./img/coffeewalk-home-screenshot.png" alt="drawing" width="400"/>
-  <img src="./img/coffeewalk-results-screenshot.png" alt="drawing" width="400"/>
-</p>
+Opening the web-app it should look something like this:
 
-Solarized dark             |  Solarized Ocean
+Search window            |  Results window
 :-------------------------:|:-------------------------:
 ![](./img/coffeewalk-home-screenshot.png)  |  ![](./img/coffeewalk-results-screenshot.png)
 
