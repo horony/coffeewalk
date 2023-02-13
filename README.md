@@ -4,7 +4,12 @@ During the COVID pandemic one of the few possible activities left was to take wa
 
 ## How it looks
 
+<img src="./img/coffeewalk-home-screenshot.png" alt="drawing" width="200"/>
+
+
 ![HOME](./img/coffeewalk-home-screenshot.png)
+
+
 
 ## How it works
 
