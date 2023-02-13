@@ -11,7 +11,7 @@ During the COVID pandemic one of the few possible activities left was to take wa
 
 Solarized dark             |  Solarized Ocean
 :-------------------------:|:-------------------------:
-![](./img/coffeewalk-home-screenshot.png")  |  ![](./img/coffeewalk-results-screenshot.png)
+![](./img/coffeewalk-home-screenshot.png)  |  ![](./img/coffeewalk-results-screenshot.png)
 
 ## How it works
 
