@@ -4,7 +4,7 @@ During the COVID pandemic one of the few possible activities left was to take wa
 
 ## Preview
 
-<p float="left" vertical-align: top>
+<p style="float='left'; vertical-align='top'">
   <img src="./img/coffeewalk-home-screenshot.png" alt="drawing" width="400"/>
   <img src="./img/coffeewalk-results-screenshot.png" alt="drawing" width="400"/>
 </p>
