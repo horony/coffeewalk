@@ -4,7 +4,7 @@ During the COVID pandemic one of the few possible activities left was to take wa
 
 ## How it looks
 
-![HOME](/images/coffeewalk-home-screenshot.PNG)
+![HOME](./images/coffeewalk-home-screenshot.PNG)
 
 ## How it works
 
