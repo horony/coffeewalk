@@ -9,6 +9,10 @@ During the COVID pandemic one of the few possible activities left was to take wa
   <img src="./img/coffeewalk-results-screenshot.png" alt="drawing" width="400"/>
 </p>
 
+Solarized dark             |  Solarized Ocean
+:-------------------------:|:-------------------------:
+![](./img/coffeewalk-home-screenshot.png")  |  ![](./img/coffeewalk-results-screenshot.png)
+
 ## How it works
 
 The web app is currently hosted on GitHub pages. It runs on **HTML**, **CSS** and **JavaScript**. Users can adjust the search through five input parameters:
